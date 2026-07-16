@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional Portfolio of Dagim Yewhlawork, a Software Engineer specializing in full-stack web and mobile application development.">
+    <title>Dagim Yewhlawork | Software Engineer Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Interactive Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-accent">&lt;</span>Dagim<span class="logo-accent">.dev /&gt;</span>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-en="Home" data-am="መነሻ">Home</a>
+                <a href="#about" class="nav-link" data-en="About" data-am="ስለኔ">About</a>
+                <a href="#skills" class="nav-link" data-en="Skills" data-am="ክህሎቶች">Skills</a>
+                <a href="#projects" class="nav-link" data-en="Projects" data-am="ፕሮጀክቶች">Projects</a>
+                <a href="#experience" class="nav-link" data-en="Experience" data-am="ልምድ">Experience</a>
+                <a href="#contact" class="nav-link" data-en="Contact" data-am="አግኙኝ">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme" title="Toggle Theme">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                <button id="languageToggle" class="lang-btn" aria-label="Toggle Language" title="Toggle Language">
+                    <span class="lang-text">አማ</span>
+                </button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-in" data-en="Available for New Opportunities" data-am="ለአዳዲስ ስራዎች ዝግጁ">
+                Available for New Opportunities
+            </div>
+            <h1 class="hero-title animate-slide-up">
+                <span data-en="Hello, I'm" data-am="ሰላም፣ እኔ">Hello, I'm</span>
+                <span class="gradient-text" data-en="Dagim Yewhalawork" data-am="ዳግም የኋላወርቅ">Dagim Yewhalawork</span>
+            </h1>
+            <h2 class="hero-subtitle animate-slide-up-delayed"
+                data-en="Software Engineer specializing in crafting performant web and mobile applications."
+                data-am="በደብረ ማርቆስ ዩኒቨርሲቲ የሶፍትዌር ልማት ባለሙያ እና የሶፍትዌር መሃንዲስ።">
+                Software Engineer specializing in crafting performant web and mobile applications.
+            </h2>
+            <p class="hero-desc animate-slide-up-deep"
+                data-en="Leveraging modern technologies to build highly scalable, interactive, and beautiful digital solutions that solve real-world problems."
+                data-am="ዘመናዊ ቴክኖሎጂዎችን በመጠቀም እውነተኛ ችግሮችን የሚፈቱ፣ ሊለኩ የሚችሉ እና ውብ የሆኑ ዲጂታል መፍትሄዎችን መገንባት።">
+                Leveraging modern technologies to build highly scalable, interactive, and beautiful digital solutions
+                that solve real-world problems.
+            </p>
+            <div class="hero-btns animate-slide-up-deep">
+                <a href="#contact" class="btn primary-btn" data-en="Get in Touch" data-am="አግኙኝ">Get in Touch</a>
+                <a href="#projects" class="btn secondary-btn" data-en="View My Work" data-am="ስራዎቼን ይመልከቱ">View My
+                    Work</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag" data-en="Who I Am" data-am="ስለ እኔ">Who I Am</span>
+                <h2 class="section-title" data-en="About Me" data-am="ስለ እኔ">About Me</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-info">
+                    <p class="about-text"
+                        data-en="As a Software Engineer at Debre Markos University, I am passionate about creating innovative solutions that make a tangible difference. With a strong foundation in Software Engineering and a keen interest in emerging technologies, I design and develop robust backend systems and craft intuitive, highly responsive user interfaces."
+                        data-am="በደብረ ማርቆስ ዩኒቨርሲቲ የሶፍትዌር መሃንዲስ እንደመሆኔ መጠን ተጨባጭ ለውጥ የሚያመጡ አዳዲስ መፍትሄዎችን ለመፍጠር ከፍተኛ ፍላጎት አለኝ። በሶፍትዌር ምህንድስና ጠንካራ መሠረት እና አዳዲስ ቴክኖሎጂዎች ላይ ከፍተኛ ፍላጎት ስላለኝ ጠንካራ የጀርባ አሰራር ስርዓቶችን እቀርጻለሁ፣ እንዲሁም እጅግ ምላሽ ሰጪ የተጠቃሚ በይነገጾችን እሰራለሁ።">
+                        As a Software Engineer from Debre Markos University, I am passionate about creating innovative
+                        solutions that make a tangible difference. With a strong foundation in Software Engineering and
+                        a keen interest in emerging technologies, I design and develop robust backend systems and craft
+                        intuitive, highly responsive user interfaces.
+                    </p>
+                    <p class="about-text"
+                        data-en="My development philosophy centers on clean code, performance, accessibility, and stellar user experiences. I actively contribute to digital transformation initiatives and academic custom integrations."
+                        data-am="የእኔ የልማት ፍልስፍና በንጹህ ኮድ፣ በአፈጻጸም፣ በተደራሽነት እና ምርጥ የተጠቃሚ ተሞክሮዎች ላይ ያተኩራል። በዲጂታል ትራንስፎርሜሽን ተነሳሽነቶች እና በአካዳሚክ ብጁ ውህደቶች ላይ በንቃት እሳተፋለሁ።">
+                        My development philosophy centers on clean code, performance, accessibility, and stellar user
+                        experiences. I actively contribute to digital transformation initiatives and academic custom
+                        integrations.
+                    </p>
+
+                    <!-- Profile Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label" data-en="Years Experience" data-am="የስራ ዓመታት">Years
+                                Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label" data-en="Projects Done" data-am="የተጠናቀቁ ስራዎች">Projects Done</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label" data-en="Core Technologies" data-am="ዋና ቴክኖሎጂዎች">Core
+                                Technologies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image-wrapper">
+                    <div class="image-frame">
+                        <img src="saka.jpg" alt="Dagim Yewhlawork Profile Picture" class="profile-img">
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag" data-en="What I Know" data-am="የምችላቸው">What I Know</span>
+                <h2 class="section-title" data-en="Skills & Expertise" data-am="ክህሎቶች እና እውቀቶች">Skills & Expertise</h2>
+                <p class="section-subtitle" data-en="Technologies I master to craft performant, scalable software."
+                    data-am="ጠንካራ ሶፍትዌር ለመገንባት የምጠቀምባቸው ቴክኖሎጂዎች።">Technologies I master to craft performant, scalable
+                    software.</p>
+                <div class="underline"></div>
+            </div>
+
+            <!-- ── PART 1: Circular Skill Rings ── -->
+            <div class="skill-rings-panel">
+                <div class="rings-glow-bg"></div>
+
+                <!-- Ring 1 -->
+                <div class="skill-ring-item">
+                    <div class="ring-svg-wrap">
+                        <svg viewBox="0 0 120 120" class="ring-svg">
+                            <circle class="ring-track" cx="60" cy="60" r="50" />
+                            <circle class="ring-fill" cx="60" cy="60" r="50" data-pct="90" stroke="#f89820" />
+                        </svg>
+                        <div class="ring-center">
+                            <i class="fab fa-java" style="color:#f89820"></i>
+                            <span class="ring-pct" data-target="90">0%</span>
+                        </div>
+                    </div>
+                    <span class="ring-label">Java & Spring</span>
+                </div>
+
+                <!-- Ring 2 -->
+                <div class="skill-ring-item">
+                    <div class="ring-svg-wrap">
+                        <svg viewBox="0 0 120 120" class="ring-svg">
+                            <circle class="ring-track" cx="60" cy="60" r="50" />
+                            <circle class="ring-fill" cx="60" cy="60" r="50" data-pct="85" stroke="#3776ab" />
+                        </svg>
+                        <div class="ring-center">
+                            <i class="fab fa-python" style="color:#3776ab"></i>
+                            <span class="ring-pct" data-target="85">0%</span>
+                        </div>
+                    </div>
+                    <span class="ring-label">Python / Django</span>
+                </div>
+
+                <!-- Ring 3 -->
+                <div class="skill-ring-item">
+                    <div class="ring-svg-wrap">
+                        <svg viewBox="0 0 120 120" class="ring-svg">
+                            <circle class="ring-track" cx="60" cy="60" r="50" />
+                            <circle class="ring-fill" cx="60" cy="60" r="50" data-pct="80" stroke="#61dafb" />
+                        </svg>
+                        <div class="ring-center">
+                            <i class="fab fa-react" style="color:#61dafb"></i>
+                            <span class="ring-pct" data-target="80">0%</span>
+                        </div>
+                    </div>
+                    <span class="ring-label">React / Next.js</span>
+                </div>
+
+                <!-- Ring 4 -->
+                <div class="skill-ring-item">
+                    <div class="ring-svg-wrap">
+                        <svg viewBox="0 0 120 120" class="ring-svg">
+                            <circle class="ring-track" cx="60" cy="60" r="50" />
+                            <circle class="ring-fill" cx="60" cy="60" r="50" data-pct="88" stroke="#4169e1" />
+                        </svg>
+                        <div class="ring-center">
+                            <i class="fas fa-database" style="color:#4169e1"></i>
+                            <span class="ring-pct" data-target="88">0%</span>
+                        </div>
+                    </div>
+                    <span class="ring-label">SQL / NoSQL</span>
+                </div>
+
+                <!-- Ring 5 -->
+                <div class="skill-ring-item">
+                    <div class="ring-svg-wrap">
+                        <svg viewBox="0 0 120 120" class="ring-svg">
+                            <circle class="ring-track" cx="60" cy="60" r="50" />
+                            <circle class="ring-fill" cx="60" cy="60" r="50" data-pct="82" stroke="#f7df1e" />
+                        </svg>
+                        <div class="ring-center">
+                            <i class="fab fa-js" style="color:#f7df1e"></i>
+                            <span class="ring-pct" data-target="82">0%</span>
+                        </div>
+                    </div>
+                    <span class="ring-label">JavaScript / TS</span>
+                </div>
+
+                <!-- Ring 6 -->
+                <div class="skill-ring-item">
+                    <div class="ring-svg-wrap">
+                        <svg viewBox="0 0 120 120" class="ring-svg">
+                            <circle class="ring-track" cx="60" cy="60" r="50" />
+                            <circle class="ring-fill" cx="60" cy="60" r="50" data-pct="70" stroke="#2496ed" />
+                        </svg>
+                        <div class="ring-center">
+                            <i class="fab fa-docker" style="color:#2496ed"></i>
+                            <span class="ring-pct" data-target="70">0%</span>
+                        </div>
+                    </div>
+                    <span class="ring-label">Docker / CI-CD</span>
+                </div>
+            </div>
+
+            <!-- ── PART 2: Glassmorphic Category Cards ── -->
+            <div class="skill-glass-grid">
+
+                <!-- Backend Card -->
+                <div class="skill-glass-card backend-card">
+                    <div class="glass-card-bg-icon"><i class="fas fa-server"></i></div>
+                    <div class="glass-card-header">
+                        <div class="glass-card-icon backend-grad"><i class="fas fa-server"></i></div>
+                        <div>
+                            <h3 class="glass-card-title" data-en="Backend Development" data-am="የጀርባ ኮድ ልማት (Backend)">
+                                Backend Development</h3>
+                            <p class="glass-card-desc" data-en="Server-side engineering" data-am="የጀርባ ኮድ ልማት">
+                                Server-side engineering</p>
+                        </div>
+                    </div>
+                    <div class="glass-pill-cloud">
+                        <span class="gpill java-pill"><i class="fab fa-java"></i> Java</span>
+                        <span class="gpill java-pill"><i class="fas fa-leaf"></i> Spring Boot</span>
+                        <span class="gpill python-pill"><i class="fab fa-python"></i> Python</span>
+                        <span class="gpill python-pill">Django / Flask</span>
+                        <span class="gpill node-pill"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="gpill node-pill">Express.js</span>
+                        <span class="gpill purple-pill"><i class="fas fa-code"></i> REST APIs</span>
+                        <span class="gpill purple-pill">GraphQL</span>
+                    </div>
+                </div>
+
+                <!-- Frontend Card -->
+                <div class="skill-glass-card frontend-card">
+                    <div class="glass-card-bg-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="glass-card-header">
+                        <div class="glass-card-icon frontend-grad"><i class="fas fa-laptop-code"></i></div>
+                        <div>
+                            <h3 class="glass-card-title" data-en="Frontend Development"
+                                data-am="የፊት ለፊት ገጽታ ልማት (Frontend)">Frontend Development</h3>
+                            <p class="glass-card-desc" data-en="Pixel-perfect interfaces" data-am="የፊት ለፊት ልማት">
+                                Pixel-perfect interfaces</p>
+                        </div>
+                    </div>
+                    <div class="glass-pill-cloud">
+                        <span class="gpill react-pill"><i class="fab fa-react"></i> React.js</span>
+                        <span class="gpill react-pill">Next.js</span>
+                        <span class="gpill js-pill"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="gpill js-pill">TypeScript</span>
+                        <span class="gpill html-pill"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="gpill css-pill"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="gpill css-pill">Responsive Design</span>
+                        <span class="gpill react-pill">Redux</span>
+                    </div>
+                </div>
+
+                <!-- Data & Cloud Card -->
+                <div class="skill-glass-card data-card">
+                    <div class="glass-card-bg-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="glass-card-header">
+                        <div class="glass-card-icon data-grad"><i class="fas fa-database"></i></div>
+                        <div>
+                            <h3 class="glass-card-title" data-en="Data & Cloud" data-am="መረጃ እና ክላውድ">Data & Cloud</h3>
+                            <p class="glass-card-desc" data-en="Storage & infrastructure" data-am="መረጃ እና ክላውድ">Storage
+                                & infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="glass-pill-cloud">
+                        <span class="gpill db-pill"><i class="fas fa-database"></i> PostgreSQL</span>
+                        <span class="gpill db-pill">MySQL</span>
+                        <span class="gpill mongo-pill"><i class="fas fa-leaf"></i> MongoDB</span>
+                        <span class="gpill cloud-pill"><i class="fab fa-aws"></i> AWS</span>
+                        <span class="gpill cloud-pill">EC2 / S3</span>
+                        <span class="gpill docker-pill"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="gpill db-pill">Redis</span>
+                        <span class="gpill cloud-pill">Lambda</span>
+                    </div>
+                </div>
+
+                <!-- Tools Card -->
+                <div class="skill-glass-card tools-card">
+                    <div class="glass-card-bg-icon"><i class="fas fa-tools"></i></div>
+                    <div class="glass-card-header">
+                        <div class="glass-card-icon tools-grad"><i class="fas fa-tools"></i></div>
+                        <div>
+                            <h3 class="glass-card-title" data-en="Tools & Methods" data-am="መሳሪያዎች">Tools & Methods</h3>
+                            <p class="glass-card-desc" data-en="Workflow & process" data-am="የስራ ዘዴዎች">Workflow &
+                                process</p>
+                        </div>
+                    </div>
+                    <div class="glass-pill-cloud">
+                        <span class="gpill git-pill"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="gpill git-pill"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="gpill agile-pill"><i class="fas fa-infinity"></i> CI/CD</span>
+                        <span class="gpill test-pill"><i class="fas fa-vial"></i> Unit Testing</span>
+                        <span class="gpill agile-pill">Agile/Scrum</span>
+                        <span class="gpill purple-pill"><i class="fas fa-project-diagram"></i> Jira</span>
+                        <span class="gpill test-pill">JUnit / Jest</span>
+                        <span class="gpill git-pill">GitLab</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag" data-en="My Portfolio" data-am="ፖርትፎሊዮ">My Portfolio</span>
+                <h2 class="section-title" data-en="Featured Projects" data-am="ታዋቂ ፕሮጀክቶች">Featured Projects</h2>
+                <div class="underline"></div>
+            </div>
+
+            <!-- Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-en="All Projects" data-am="ሁሉም">All
+                    Projects</button>
+                <button class="filter-btn" data-filter="web" data-en="Web Apps" data-am="ዌብሳይቶች">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile" data-en="Mobile Apps" data-am="ሞባይል መተግበሪያዎች">Mobile
+                    Apps</button>
+                <button class="filter-btn" data-filter="system" data-en="Systems" data-am="ሲስተሞች">Systems</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="vms.png" alt="Property Management System Screenshot"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="View Demo" aria-label="View Demo"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/Dagim29/Ethiopian-Vital-Events-Management-System.git"
+                                    class="project-link-icon" title="View Code" aria-label="View Code"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <span class="project-tag-pill">VMS / Vital Events Management System</span>
+                        <h3 class="project-card-title" data-en="Ethiopian Vital Events Management System (EVEMS)"
+                            data-am="የኢትዮጵያ ወሳኝ ክስተቶች አስተዳደር ስርዓት (EVEMS)">
+                            Ethiopian Vital Events Management System (EVEMS)
+                        </h3>
+                        <p class="project-card-text"
+                            data-en="A comprehensive, enterprise-grade web application for managing vital records (births, deaths, marriages, divorces) in Ethiopia with advanced statistical reporting, predictive analytics, and professional certificate generation."
+                            data-am="የወሊድ፣ ሞት፣ ጋብቻ እና ፍቺ መዝገቦችን ለማስተዳደር የተሰራ ሁሉን አቀፍ የዌብ ስርዓት። ከፍተኛ ስታቲስቲካዊ ሪፖርት፣ ትንበያ ትንተና እና ሙያዊ የምስክር ወረቀት ማዘጋጀትን ይደግፋል።">
+                            A comprehensive, enterprise-grade web application for managing vital records (births,
+                            deaths, marriages, divorces) in Ethiopia with advanced statistical reporting, predictive
+                            analytics, and professional certificate generation.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span>JavaScript</span>
+                            <span>TailwindCSS</span>
+                            <span>React</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="project-view-btn">
+                                <i class="fas fa-eye"></i>
+                                <span data-en="View My Work" data-am="ስራ ይመልከቱ">View My Work</span>
+                            </a>
+                            <a href="https://github.com/Dagim29/Ethiopian-Vital-Events-Management-System.git"
+                                class="project-source-btn">
+                                <i class="fab fa-github"></i>
+                                <span data-en="Source Code" data-am="ምንጭ ኮድ">Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <img src="s3.png" alt="Property Management System Screenshot"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="View Demo" aria-label="View Demo"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/Dagim29/online-bookstore.git" class="project-link-icon"
+                                    title="View Code" aria-label="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <span class="project-tag-pill">Web Application</span>
+                        <h3 class="project-card-title" data-en="Online Bookstore" data-am="የመስመር ላይ የመጽሐፍ ሱቅ">
+                            Online Bookstore
+                        </h3>
+                        <p class="project-card-text"
+                            data-en="Web application that allows users to buy books from different authors and publishers in Ethiopia."
+                            data-am="የኢትዮጵያ የተለያዩ ደራሲያን እና አሳታሚዎች መጽሐፍቶችን ለመግዛት የሚያስችል የዌብ መተግበሪያ።">
+                            Web application that allows users to buy books from different authors and publishers in
+                            Ethiopia.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="project-view-btn">
+                                <i class="fas fa-eye"></i>
+                                <span data-en="View My Work" data-am="ስራ ይመልከቱ">View My Work</span>
+                            </a>
+                            <a href="https://github.com/Dagim29/online-bookstore.git" class="project-source-btn">
+                                <i class="fab fa-github"></i>
+                                <span data-en="Source Code" data-am="ምንጭ ኮድ">Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="pta.png" alt="Property Management System Screenshot"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="View Demo" aria-label="View Demo"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/Dagim29/pdf-to-audio-converter.git"
+                                    class="project-link-icon" title="View Code" aria-label="View Code"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <span class="project-tag-pill">Desktop Tool</span>
+                        <h3 class="project-card-title" data-en="PDF to Audio Converter" data-am="ፒዲኤፍ ወደ ድምጽ መቀየሪያ">
+                            PDF to Audio Converter
+                        </h3>
+                        <p class="project-card-text"
+                            data-en="Converts PDF files to audio using PyPDF4, pyttsx3, and pydub libraries with a GUI built with tkinter. Supports multiple voices for text-to-speech with a simple and user-friendly interface."
+                            data-am="PyPDF4፣ pyttsx3 እና pydub ቤተ-መጻሕፍቶችን በመጠቀም ፒዲኤፍ ፋይሎችን ወደ ድምጽ ይቀይራል። tkinter በተሰራ GUI ሲሆን የተለያዩ ድምጾችን ለጽሑፍ-ወደ-ድምጽ ይደግፋል።">
+                            Converts PDF files to audio using PyPDF4, pyttsx3, and pydub libraries with a GUI built
+                            with tkinter. Supports multiple voices for text-to-speech with a simple and
+                            user-friendly interface.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span>Python</span>
+                            <span>Tkinter</span>
+                            <span>pydub</span>
+                            <span>pyttsx3</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="##" class="project-view-btn">
+                                <i class="fas fa-eye"></i>
+                                <span data-en="View My Work" data-am="ስራ ይመልከቱ">View My Work</span>
+                            </a>
+                            <a href="https://github.com/Dagim29/pdf-to-audio-converter.git" class="project-source-btn">
+                                <i class="fab fa-github"></i>
+                                <span data-en="Source Code" data-am="ምንጭ ኮድ">Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="system">
+                    <div class="project-image">
+                        <img src="login.png" alt="Property Management System Screenshot"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="View Demo" aria-label="View Demo"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/Dagim29/DMU_property_management_system.git"
+                                    class="project-link-icon" title="View Code" aria-label="View Code"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <span class="project-tag-pill">Management</span>
+                        <h3 class="project-card-title" data-en="Property Management System" data-am="የንብረት አስተዳደር ስርዓት">
+                            Property Management System
+                        </h3>
+                        <p class="project-card-text"
+                            data-en="A secure property and inventory auditing suite built to track asset allocations, maintenance request queues, and department logs."
+                            data-am="የንብረት ክፍፍልን፣ የጥገና ጥያቄዎችን እና የክፍል መዝገቦችን ለመከታተል የተገነባ አስተማማኝ የንብረት አስተዳደር ስርዓት።">
+                            A secure property and inventory auditing suite built to track asset allocations, maintenance
+                            request queues, and department logs.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span>React</span>
+                            <span>Django</span>
+                            <span>PostgreSQL</span>
+                            <span>TailwindCSS</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="project-view-btn">
+                                <i class="fas fa-eye"></i>
+                                <span data-en="View My Work" data-am="ስራ ይመልከቱ">View My Work</span>
+                            </a>
+                            <a href="https://github.com/Dagim29/DMU_property_management_system.git"
+                                class="project-source-btn">
+                                <i class="fab fa-github"></i>
+                                <span data-en="Source Code" data-am="ምንጭ ኮድ">Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag" data-en="My Career Path" data-am="የስራ ጉዞዬ">My Career Path</span>
+                <h2 class="section-title" data-en="Professional Experience" data-am="የስራ ልምድ">Professional Experience
+                </h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2016 - PRESENT</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title" data-en="Software Engineer" data-am="የሶፍትዌር መሃንዲስ">Software Engineer
+                        </h3>
+                        <h4 class="timeline-company" data-en="Debre Markos University" data-am="ደብረ ማርቆስ ዩኒቨርሲቲ">Debre
+                            Markos University</h4>
+                        <ul class="timeline-details">
+                            <li data-en="Lead developer for internal university digital transformation initiatives and administrative portals."
+                                data-am="ለዩኒቨርሲቲው የዲጂታል ትራንስፎርሜሽን እና የአስተዳደር መግቢያ በር ፕሮጀክቶች መሪ አልሚ።">
+                                Lead developer for internal university digital transformation initiatives and
+                                administrative portals.
+                            </li>
+                            <li data-en="Collaborate with engineering department faculty to design custom research applications and data models."
+                                data-am="ለተለያዩ የምርምር ስራዎች እና የመረጃ ሞዴሎች ዲዛይን ከምህንድስና ፋኩልቲዎች ጋር መተባበር።">
+                                Collaborate with engineering department faculty to design custom research applications
+                                and data models.
+                            </li>
+                            <li data-en="Mentor and guide junior developers and conduct technical coding bootcamps for senior students."
+                                data-am="ጁኒየር ገንቢዎችን ማሰልጠን እና ለተመራቂ ተማሪዎች ተግባራዊ የኮዲንግ ስልጠናዎችን መስጠት።">
+                                Mentor and guide junior developers and conduct technical coding bootcamps for senior
+                                students.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">SUMMER 2017</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title" data-en="Software Development Intern" data-am="የሶፍትዌር ልማት ሰልጣኝ">
+                            Software Development Intern</h3>
+                        <h4 class="timeline-company" data-en="Bernos Tech" data-am="በርኖስ ቴክ">Bernos Tech
+                        </h4>
+                        <ul class="timeline-details">
+                            <li data-en="Assisted senior developers in building secure API endpoints using Python and Django frameworks."
+                                data-am="ከከፍተኛ መሐንዲሶች ጋር በመሆን ፒኤችፒ እና ዲጃንጎ በመጠቀም አስተማማኝ ኤፒአይ መገንባት።">
+                                Assisted senior developers in building secure API endpoints using Python and Django
+                                frameworks.
+                            </li>
+                            <li data-en="Participated in daily Agile stand-ups, sprint planning sessions, and system review meetings."
+                                data-am="በየቀኑ የአጃይል ስብሰባዎች፣ የስፕሪንት እቅዶች እና የስርዓት ግምገማዎች ላይ መሳተፍ።">
+                                Participated in daily Agile stand-ups, sprint planning sessions, and system review
+                                meetings.
+                            </li>
+                            <li data-en="Refactored front-end responsive grid layouts, optimizing code rendering speed by 15%."
+                                data-am="የሞባይል ገጽታዎችን በማስተካከል የገጽታ መጫኛ ፍጥነትን በ15% ማሻሻል።">
+                                Refactored front-end responsive grid layouts, optimizing code rendering speed by 15%.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag" data-en="Reviews" data-am="አስተያየቶች">Reviews</span>
+                <h2 class="section-title" data-en="Testimonials" data-am="የምስክርነት ቃላት">Testimonials</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="testimonial-carousel">
+                <!-- Testimonial Item 1 -->
+                <div class="testimonial-card active">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text"
+                        data-en="An exceptional software engineer with a keen eye for detail. Dagim always delivers high-quality architecture and solid code on time. A great technical resource."
+                        data-am="ለዝርዝር ነገሮች ከፍተኛ ትኩረት የሚሰጥ አስደናቂ የሶፍትዌር መሃንዲስ። ዳግም ሁልጊዜ ከፍተኛ ጥራት ያላቸውን አርክቴክቸሮች እና ጠንካራ ኮዶችን በሰዓቱ ያቀርባል።">
+                        "An exceptional software engineer with a keen eye for detail. Dagim always delivers high-quality
+                        architecture and solid code on time. A great technical resource."
+                    </p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Dr. Direselegn Assefa</h4>
+                        <h5 class="author-title" data-en="CTO, Tech Innovate Ethiopia" data-am="ሲቲኦ, ቴክ ኢኖቬት ኢትዮጵያ">
+                            CTO,Bernos
+                            Tech </h5>
+                    </div>
+                </div>
+
+                <!-- Testimonial Item 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text"
+                        data-en="A dedicated and skilled professional who is always willing to go the extra mile. He successfully overhauled our research database, improving queries significantly."
+                        data-am="ሁል ጊዜ ተጨማሪ ርቀቶችን ለመጓዝ ፈቃደኛ የሆነ ታማኝ እና ጎበዝ ባለሙያ። የምርምር ዳታቤዛችንን በተሳካ ሁኔታ በማሻሻል የመጠይቅ ፍጥነቱን በከፍተኛ ደረጃ አሻሽሎታል።">
+                        "A dedicated and skilled professional who is always willing to go the extra mile. He
+                        successfully overhauled our research database, improving queries significantly."
+                    </p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Dr. Daniel</h4>
+                        <h5 class="author-title" data-en="Computer Science Professor, DMU"
+                            data-am="የኮምፒውተር ሳይንስ ፕሮፌሰር, ደማዩ">Computer Science Professor, DMU</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag" data-en="Let's Talk" data-am="ለመገናኘት">Let's Talk</span>
+                <h2 class="section-title" data-en="Get In Touch" data-am="ያግኙኝ">Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Cards -->
+                <div class="contact-info">
+                    <h3 class="contact-subtitle" data-en="Contact Information" data-am="የመገናኛ መረጃ">Contact Information
+                    </h3>
+                    <p class="contact-intro"
+                        data-en="Have a project in mind, want to collaborate, or just want to say hi? Feel free to reach out. I will get back to you as soon as possible!"
+                        data-am="በአእምሮዎ ውስጥ ያለ ፕሮጀክት አለ ወይንስ አብረው ለመስራት ይፈልጋሉ? በማንኛውም ጊዜ ሊያገኙኝ ይችላሉ። በተቻለ ፍጥነት ምላሽ እሰጣለሁ!">
+                        Have a project in mind, want to collaborate, or just want to say hi? Feel free to reach out. I
+                        will get back to you as soon as possible!
+                    </p>
+
+                    <div class="info-links-cards">
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-content">
+                                <span class="info-title" data-en="Email Me" data-am="ኢሜይል">Email Me</span>
+                                <a href="mailto:yworkdada@gmail.com" class="info-value">yworkdada@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-content">
+                                <span class="info-title" data-en="Call Me" data-am="ስልክ ቁጥር">Call Me</span>
+                                <a href="tel:+251953937969" class="info-value">+251 953 937 969</a>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-content">
+                                <span class="info-title" data-en="Location" data-am="አድራሻ">Location</span>
+                                <span class="info-value" data-en="Addis Ababa, Ethiopia" data-am="አዲስ አበባ, ኢትዮጵያ">Addis
+                                    Ababa, Ethiopia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" required class="form-input" placeholder=" ">
+                            <label for="name" class="form-label" data-en="Name" data-am="ስም">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required class="form-input" placeholder=" ">
+                            <label for="email" class="form-label" data-en="Email" data-am="ኢሜይል">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" required class="form-input form-textarea" placeholder=" "></textarea>
+                            <label for="message" class="form-label" data-en="Message" data-am="መልዕክት">Message</label>
+                        </div>
+                        <button type="submit" class="btn primary-btn submit-btn">
+                            <span data-en="Send Message" data-am="መልዕክት ላክ">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-accent">&lt;</span>Dagim<span class="logo-accent">.dev /&gt;</span>
+            </div>
+            <div class="social-icons">
+                <a href="#" aria-label="GitHub" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">
+                &copy; <span id="currentYear"></span> Dagim Yewhlawork. <span data-en="All rights reserved."
+                    data-am="መብቱ በህግ የተጠበቀ ነው።">All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Main Logic Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
