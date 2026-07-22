@@ -514,4 +514,53 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = false;
         }
     });
+
+    // --- CERTIFICATE LIGHTBOX MODAL ---
+    const certModal = document.getElementById('certLightboxModal');
+    if (certModal) {
+        const modalImg = document.getElementById('certModalImage');
+        const modalTitle = document.getElementById('certModalTitleText');
+        const modalIssuer = document.getElementById('certModalIssuerText');
+        const modalDownload = document.getElementById('certModalDownloadLink');
+        const closeBtn = certModal.querySelector('.cert-modal-close-btn');
+        const backdrop = certModal.querySelector('.cert-modal-backdrop');
+
+        function openCertModal(imgSrc, title, issuer) {
+            if (modalImg) modalImg.src = imgSrc;
+            if (modalTitle) modalTitle.textContent = title;
+            if (modalIssuer) modalIssuer.textContent = issuer;
+            if (modalDownload) {
+                modalDownload.href = imgSrc;
+                modalDownload.setAttribute('download', title.toLowerCase().replace(/\s+/g, '-') + '-certificate.png');
+            }
+            certModal.classList.add('active');
+            certModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            certModal.classList.remove('active');
+            certModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.open-cert-modal').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const imgSrc = btn.getAttribute('data-img');
+                const title = btn.getAttribute('data-title');
+                const issuer = btn.getAttribute('data-issuer');
+                openCertModal(imgSrc, title, issuer);
+            });
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closeCertModal);
+        if (backdrop) backdrop.addEventListener('click', closeCertModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && certModal.classList.contains('active')) {
+                closeCertModal();
+            }
+        });
+    }
 });
